@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAQSAD 2.0 — COMPLETE PRODUCT TRANSFORMATION</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#1a1a1a;color-scheme:dark}
+  body{font-family:"Ubuntu","Noto Sans","Segoe UI",system-ui,sans-serif;display:flex;justify-content:center}
+  #app{position:relative;width:370px;height:997px;background:#1a1a1a;color:#d4d4d4;overflow:hidden;font-size:15px}
+  .a{position:absolute;white-space:nowrap}
+  svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .ic{position:absolute;color:#9a9a9a;transform:translate(-50%,-50%)}
+  .down{transform:translate(-50%,-50%) rotate(180deg)}
+
+  /* header */
+  #head{position:absolute;left:0;top:0;width:370px;height:42px;border-bottom:1px solid #2a2a2a}
+  #head .t{left:7px;top:10px;font-size:16px;color:#e4e4e4;letter-spacing:.2px}
+  #head .ic{top:21px;color:#cfcfcf}
+
+  /* bubbles */
+  .bub{position:absolute;left:16px;width:320px;height:121px;background:#2a2a2a;border-radius:14px;overflow:hidden;z-index:2}
+  .bub p{position:absolute;left:12px;top:6px;line-height:23.4px;font-size:15.5px;color:#e8e8e8;white-space:nowrap}
+  .bub::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(to bottom,rgba(42,42,42,0),#2a2a2a 92%)}
+
+  .dim{color:#7d7d7d;line-height:22px;font-size:15px}
+  .err-id{color:#6e6e6e;font-size:13px;line-height:22px}
+
+  /* scrollbar */
+  #sb{position:absolute;left:360px;top:155px;width:4px;height:465px;border-radius:2px;background:#3b3b3b}
+
+  /* input */
+  #box{position:absolute;left:8px;top:858px;width:351px;height:102px;border:1px solid #363636;background:#1e1e1e;border-radius:18px}
+  #box .ph{left:14px;top:18px;color:#9b9b9b;font-size:15px}
+  #box .m{left:52px;top:64px;font-size:14px;color:#a8a8a8}
+  #box .m b{font-weight:400;color:#7d7d7d;margin-left:4px}
+  #send{position:absolute;left:307px;top:59px;width:36px;height:36px;border-radius:50%;background:#2e2e2e;color:#7a7a7a}
+  #send svg{position:absolute;left:8px;top:8px}
+
+  /* status bar */
+  #status{position:absolute;left:0;top:970px;width:370px;height:27px;border-top:1px solid #2a2a2a;font-size:13px;color:#cfcfcf}
+  #status .a{top:4px}
+  #gold{position:absolute;left:180px;top:0;width:158px;height:26px;background:#6d5f00}
+  #gold span{position:absolute;left:8px;top:4px;white-space:nowrap;color:#f1f1f1}
+  #gold i{position:absolute;left:131px;top:8px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid #f1f1f1;box-shadow:inset 0 0 0 2px #6d5f00}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="hist" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2"/></symbol>
+    <symbol id="dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 9h6M9 13h6"/></symbol>
+    <symbol id="up" viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-8c1.5 0 2.5 1 2.2 2.5L12.7 9H19a2 2 0 0 1 2 2.3l-1.3 7A2 2 0 0 1 17.7 20H7"/></symbol>
+    <symbol id="chd" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="chu" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></symbol>
+    <symbol id="file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 10l3 2-3 2M12 15h5"/></symbol>
+    <symbol id="inbox" viewBox="0 0 24 24"><path d="M3 13l3-8h12l3 8v6H3zM3 13h5l1 2h6l1-2h5"/></symbol>
+    <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/><path d="M12 8.6h8.2M8.9 14l-4.1-7M15.1 14l-4.1 7"/></symbol>
+    <symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="gauge" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-5"/></symbol>
+    <symbol id="bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></symbol>
+  </defs>
+</svg>
+
+<div id="app">
+
+  <!-- Header -->
+  <div id="head">
+    <div class="a t"># MAQSAD 2.0 — COMPLI</div>
+    <svg class="ic" style="left:222px"><use href="#plus"/></svg>
+    <svg class="ic" style="left:262px"><use href="#hist"/></svg>
+    <svg class="ic" style="left:302px"><use href="#dots"/></svg>
+    <svg class="ic" style="left:342px"><use href="#x"/></svg>
+  </div>
+
+  <div id="sb"></div>
+
+  <!-- First (partially scrolled) message -->
+  <div class="bub" style="top:66px">
+    <p># MAQSAD 2.0 — COMPLETE PRODUCT<br>TRANSFORMATION<br>## Apple-Inspired Liquid Glass UI | AI<br>Personal Development Companion |<br>Production-Ready Flutter Android App</p>
+  </div>
+  <div class="a dim" style="left:42px;top:179px;z-index:1">Agent execution terminated due to<br>error.</div>
+  <svg class="ic" style="left:257px;top:272px"><use href="#copy"/></svg>
+  <svg class="ic" style="left:287px;top:272px"><use href="#up"/></svg>
+  <svg class="ic down" style="left:317px;top:273px"><use href="#up"/></svg>
+
+  <!-- Second message -->
+  <div class="bub" style="top:322px">
+    <p># MAQSAD 2.0 — COMPLETE PRODUCT<br>TRANSFORMATION<br>## Apple-Inspired Liquid Glass UI | AI<br>Personal Development Companion |<br>Production-Ready Flutter Android App</p>
+  </div>
+
+  <div class="a dim" style="left:26px;top:473px">Worked for 1s</div>
+  <svg class="ic" style="left:142px;top:485px;width:16px;height:16px"><use href="#chd"/></svg>
+
+  <div class="a dim" style="left:26px;top:516px;color:#8a8a8a">Error</div>
+  <div class="a" style="left:68px;top:516px;width:232px;overflow:hidden;line-height:22px;color:#b8b8b8;font-size:15px">Agent execution terminated d</div>
+  <svg class="ic" style="left:318px;top:528px;width:16px;height:16px"><use href="#chd"/></svg>
+
+  <div class="a err-id" style="left:26px;top:549px">Error ID: 387e6610-1419-48d6-abed-<br>ccc57247ef4e-16</div>
+
+  <div class="a dim" style="left:42px;top:603px">Agent execution terminated due to<br>error.</div>
+
+  <svg class="ic" style="left:257px;top:697px"><use href="#copy"/></svg>
+  <svg class="ic" style="left:287px;top:697px"><use href="#up"/></svg>
+  <svg class="ic down" style="left:317px;top:698px"><use href="#up"/></svg>
+
+  <!-- Tool icons -->
+  <svg class="ic" style="left:36px;top:836px;width:18px;height:18px;color:#a8a8a8"><use href="#file"/></svg>
+  <svg class="ic" style="left:70px;top:836px;width:18px;height:18px;color:#a8a8a8"><use href="#term"/></svg>
+  <svg class="ic" style="left:105px;top:836px;width:18px;height:18px;color:#a8a8a8"><use href="#inbox"/></svg>
+  <svg class="ic" style="left:142px;top:836px;width:18px;height:18px;color:#a8a8a8"><use href="#globe"/></svg>
+
+  <!-- Input -->
+  <div id="box">
+    <div class="a ph">Ask anything, @ to mention, / for actions</div>
+    <svg class="ic" style="left:23px;top:75px;color:#bdbdbd"><use href="#plus"/></svg>
+    <div class="a m">Gemini 3.8 Flash <b>High</b></div>
+    <svg class="ic" style="left:198px;top:75px;width:18px;height:18px;color:#e6b800"><use href="#gauge"/></svg>
+    <svg class="ic" style="left:219px;top:75px;width:14px;height:14px;color:#a8a8a8"><use href="#chu"/></svg>
+    <svg class="ic" style="left:283px;top:75px;width:18px;height:18px;color:#bdbdbd"><use href="#mic"/></svg>
+    <div id="send"><svg><use href="#arrow"/></svg></div>
+  </div>
+
+  <!-- Status bar -->
+  <div id="status">
+    <div class="a" style="left:14px">UTF-8</div>
+    <div class="a" style="left:76px">LF</div>
+    <div class="a" style="left:112px">{ } XML</div>
+    <div id="gold"><span>Antigravity IDE - {</span><i></i></div>
+    <svg class="ic" style="left:350px;top:13px;width:17px;height:17px;color:#cfcfcf"><use href="#bell"/></svg>
+  </div>
+
+</div>
+</body>
+</html>
